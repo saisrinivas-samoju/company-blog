@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid bg-light text-dark p-5">
+  <h1>{{title}}</h1>
+  <h3>Written by: {{post.author.username}}</h3>
+  <h4>Published: {{date.strftime("%M %d, %Y")}}</h4>
+  <p>{{text}}</p>
+  {% if post.author==current_user %}
+  <div>
+    <a class="btn btn-secondary" href="{{url_for('blog_posts.update', blog_post_id=post.id)}}">Update</a>
+    <button type="button" class='btn btn-danger' data-bs-toggle='modal' data-bs-target="#del_modal" >Delete</button>
+  </div>
+  {% endif %}
+</div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="del_modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark">Delete Post?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-dark">Are you sure you want to delete the post?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary text-dark" data-bs-dismiss="modal">Cancel</button>
+          <form class="" action="{{url_for('blog_posts.delete_post', blog_post_id=post.id)}}" method="POST">
+            <input class='btn btn-danger' type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
