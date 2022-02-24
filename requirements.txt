@@ -5,6 +5,7 @@ Flask_Migrate==2.1.1
 Flask_SQLAlchemy==2.3.2
 Flask_WTF==0.14.2
 Pillow<=9.0.1
+setuptools==58.0.4
 SQLAlchemy==1.2.6
 Werkzeug==0.14.1
 WTForms==2.1
