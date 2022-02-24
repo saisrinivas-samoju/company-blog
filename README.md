@@ -2,6 +2,8 @@
 
 ### This is blog website created using python, flask, and other web development tools.
 
+[Application link](https://my-company-blog.herokuapp.com/)
+
 ## Features available in the website:
 
 * Starting from the Home tab, there are different tabs present when you open the website:
@@ -67,4 +69,3 @@
 * Finally, you can see the updated posts with the updated information and date in the "Home" tab.
 
 <a href="https://ibb.co/nDZbkjt"><img src="https://i.ibb.co/fCB20HL/Updated-Homepage.png" alt="Updated-Homepage" border="0"></a>
-"# company-blog" 
